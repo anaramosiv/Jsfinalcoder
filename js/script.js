@@ -1,6 +1,7 @@
 // window.onload = function() {
 
 //Array para carrito
+
 let miCarrito = [];
 
 //Array de servicios para "comprar"
@@ -133,27 +134,27 @@ for (let i = 0; i < servicios.length; i++) {
 
         }
         const existe = miCarrito.some(servicio => servicio.id === serviciosCarrito.id);
-       if(existe){
-           const miServicio = miCarrito.map(servicio =>{
-                if(servicio.id === serviciosCarrito.id){
-                servicio.cantidad++;
-                return servicio;
-            }else{
-                return servicio;
-            }
-        });
+        if (existe) {
+            const miServicio = miCarrito.map(servicio => {
+                if (servicio.id === serviciosCarrito.id) {
+                    servicio.cantidad++;
+                    return servicio;
+                } else {
+                    return servicio;
+                }
+            });
 
-       }else{
-           miCarrito.push(serviciosCarrito);
+        } else {
+            miCarrito.push(serviciosCarrito);
 
-       }
+        }
 
         console.log(serviciosCarrito);
-     
+
         // console.log(`Añadiste ${servicios[i].servicio}`)
         console.log(miCarrito);
         carritoHTML();
- 
+
     }
     //Evento para que agregue al carrito//
     btnCarrito.addEventListener('click', carrito);
@@ -199,27 +200,27 @@ function carritoHTML() {
         contenedorCarrito.appendChild(row)
 
         //Almacena  el carrito en el localStorage
-        miCarritoStorage ();
-         
+        miCarritoStorage();
+
         //Muestra lo almacenado el local storage del carrito
-        document.addEventListener('DOMContentLoaded', () => { 
-         miCarrito = JSON.parse(localStorage.getItem('carrito') ) || [];
+        document.addEventListener('DOMContentLoaded', () => {
+            miCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             carritoHTML();
 
         });
 
-            
+
 
         //Vaciar el Array y el HTML del carrito
         vaciarCarritoBoton.addEventListener('click', () => {
             miCarrito = [];
             limpiarHTML();
         });
-              
+
     });
 }
 
-function miCarritoStorage (){
+function miCarritoStorage() {
     localStorage.setItem('carrito', JSON.stringify(miCarrito));
 }
 
@@ -263,54 +264,73 @@ const imagenes = document.querySelector('#eyes');
 const contenedorResult = document.querySelector('#result');
 
 const imgs = [{
-   id: 'eye1',
-   url: 'img/natural.jpg',
-   nombre: 'Natural Eyes',
+        id: 'eye1',
+        url: 'img/natural.jpg',
+        nombre: 'Natural Eyes',
 
-},
-{
-    id: 'eye2',
-    url: 'img/doll.jpg',
-    nombre: 'Doll Eyes',
-},
-{
-    id: 'eye3',
-    url: 'img/open.jpg',
-    nombre: 'Open Eyes',
-},
-{
-    id: 'eye4',    
-    url: 'img/cat.jpg',
-    nombre: 'Cat Eyes',
-},
+    },
+    {
+        id: 'eye2',
+        url: 'img/doll.jpg',
+        nombre: 'Doll Eyes',
+    },
+    {
+        id: 'eye3',
+        url: 'img/open.jpg',
+        nombre: 'Open Eyes',
+    },
+    {
+        id: 'eye4',
+        url: 'img/cat.jpg',
+        nombre: 'Cat Eyes',
+    },
 ];
 
 imgListener();
-function imgListener(){
 
-    imagenes.addEventListener('click', mostrarLash);{ 
-        
-    }};
-    
-    function mostrarLash(e){
-        const img = e.target.id;
-        const imgSeleccionada = imgs.find(imagen => imagen.id === img);
-        contenedorResult.innerHTML = `<img src="${imgSeleccionada.url}" alt="">`;
-        contenedorResult.innerHTML += `<h3>El estilo que mejor te iría es:<br> ${imgSeleccionada.nombre}</h3>`;  
-    };
+function imgListener() {
+
+    imagenes.addEventListener('click', mostrarLash); {
+
+    }
+};
+
+function mostrarLash(e) {
+    const img = e.target.id;
+    const imgSeleccionada = imgs.find(imagen => imagen.id === img);
+    contenedorResult.innerHTML = `<img src="${imgSeleccionada.url}" alt="">`;
+    contenedorResult.innerHTML += `<h3>El estilo que mejor te iría es:<br> ${imgSeleccionada.nombre}</h3>`;
+};
 // };
 
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
- async function consultarAPI () {
+
+async function consultarAPI(numero) {
     //consulta a la API jsonplaceholder
     let respuesta = await fetch('https://jsonplaceholder.typicode.com/comments');
     let comentarios = await respuesta.json();
-    console.log( comentarios)
-    console.log ('id:',comentarios[0].id)
-    console.log ('nombre:',comentarios[0].name)
-    console.log ('comentario:', comentarios[0].body)
+
+    console.log(comentarios)
+    console.log('id:', comentarios[numero].id)
+    let idTest = comentarios[numero].id;
+    console.log('nombre:', comentarios[numero].name)
+    let nombreTest = comentarios[numero].name;
+    console.log('comentario:', comentarios[numero].body)
+    let bodyTest = comentarios[numero].body;
+    const testimonals = document.querySelector(`#testimonials`);
+    testimonals.innerHTML = `<p id="idTest"> id comentario: ${idTest}</p>
+                             <p id="nombreTest"> Nombre: ${nombreTest}</p>
+                             <p id="bodyTest"> ${bodyTest}</p>`
 
 }
-
-consultarAPI();
+consultarAPI(0);
+function azar (){
+    let numero= getRandomInt(0, 500);
+    consultarAPI(numero)
+  
+}
+// consultarAPI();
