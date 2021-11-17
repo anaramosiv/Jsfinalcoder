@@ -126,7 +126,7 @@ for (let i = 0; i < servicios.length; i++) {
             id: `${servicios[i].id}`,
             servicio: `${servicios[i].servicio}`,
             precio: `${servicios[i].precio}`,
-            duracionHoras: `${servicios[i].precio}`,
+            duracionHoras: `${servicios[i].duracionHoras}`,
             pxP: `${servicios[i].pxP}`,
             efecto: `${servicios[i].efecto}`,
             url: `${servicios[i].url}`,
@@ -152,7 +152,6 @@ for (let i = 0; i < servicios.length; i++) {
         console.log(serviciosCarrito);
 
         // console.log(`Añadiste ${servicios[i].servicio}`)
-        console.log(miCarrito);
         carritoHTML();
 
     }
@@ -160,7 +159,7 @@ for (let i = 0; i < servicios.length; i++) {
     btnCarrito.addEventListener('click', carrito);
 }
 
-////------- Añadiendo cosas al carrito-------////////
+////------- Añadiendo cosas al HTML del carrito-------////////
 
 const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody')
@@ -174,10 +173,10 @@ const eliminarProducto = (id) => {
     carritoHTML();
 }
 
-//Muestra el carrito de compras en el HTML
+// Funcion para mostrar el carrito de compras en el HTML
 function carritoHTML() {
 
-    //elimina el array anterior (limpia HTML para agregar el nuevo array de productos agregados)
+    //elimina el array anterior (limpia HTML para agregar el nuevo array de productos agregados, y no se duplique)
     limpiarHTML();
 
     //Recorre el carrito y genera el HTML
@@ -198,31 +197,49 @@ function carritoHTML() {
 
         `;
         contenedorCarrito.appendChild(row)
+        
+        //Totalizar con for each los montos del carrito
+        const totalCarrito = document.querySelector('#total-carrito-span');
+        const calcularTotal = () =>{
+            let total = 0;
+            miCarrito.forEach(servicio =>{
+                total += servicio.precio * servicio.cantidad;
+            })
+            totalCarrito.textContent = total;
+        }
+        calcularTotal();
 
-        //Almacena  el carrito en el localStorage
-        miCarritoStorage();
-
+        //Totalizar con metodo reduce otro monto de carrito 
+        const totalCarrito2 = document.querySelector('#total-carrito-span2');
+        totalCarrito2.innerHTML = miCarrito.reduce((total, servicio) => total + servicio.duracionHoras * servicio.cantidad, 0);
         //Muestra lo almacenado el local storage del carrito
         document.addEventListener('DOMContentLoaded', () => {
             miCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             carritoHTML();
 
+
         });
 
-
+        
 
         //Vaciar el Array y el HTML del carrito
-        vaciarCarritoBoton.addEventListener('click', () => {
+        vaciarCarritoBoton.addEventListener('click', (e) => {
+            e.preventDefault();
             miCarrito = [];
             limpiarHTML();
+            totalCarrito2.innerHTML = 0 ;
+            totalCarrito.innerHTML = 0;
         });
-
+        
     });
 }
 
-function miCarritoStorage() {
-    localStorage.setItem('carrito', JSON.stringify(miCarrito));
-}
+
+// function miCarritoStorage() {
+//     localStorage.setItem('carrito', JSON.stringify(miCarrito))};
+
+
+
 
 //Elimina los arrays anteriores del tbody para que no se repitan cuando agregamos nuevos productos
 function limpiarHTML() {
@@ -232,6 +249,7 @@ function limpiarHTML() {
     }
 
 }
+
 
 // ---------Seccion de nombre en home-----------
 
@@ -247,8 +265,6 @@ $("#formulario").submit(function (e) {
 
     $(".seccionPortada").prepend(`<p class"Saludo">Hola ${tomarNombre} es un gusto atenderte</p>`);
 
-    //Almacenar el nombre en localStorage para reutilizarlo//
-    localStorage.setItem("nombre", tomarNombre);
 
 });
 
@@ -303,7 +319,7 @@ function mostrarLash(e) {
 };
 // };
 
-
+//APi  para mostrar comentarios de usuarios ficticios
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -333,4 +349,3 @@ function azar (){
     consultarAPI(numero)
   
 }
-// consultarAPI();
