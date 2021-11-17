@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodhi Beauty and Tattoo studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="" width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Nosotrxs</a>
+                    <a class="nav-link" href="#">Servicios</a>
+                    <a class="nav-link" href="#">Contacto</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </nav>
+    <header>
+
+        <div class="cajaForm">
+            <form class="formulario formulario-nombre" id="formulario">
+                <input type="text" name="nombre" class="nameClient" placeholder="Ingresa tu nombre">
+                <input type="submit" value="Insertar Nombre" id="btn-submit">
+            </form>
+        </div>
+        <div class="seccionPortada">
+            <h1 style="padding-top: 10rem;" id="mainTittle">Bienvenidos a Bodhi Studio</h1>
+            <h2 id="mainSubtittle">Ven y explota la mejor versión de ti
+            </h2>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" id="carritoBtn" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Carrito de compras
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Mi seleccion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="two columns u-pull-right" id="navCarrito">
+                            <ul>
+                                <li class="submenu">
+                                    <img src="img/cart.png" id="img-carrito">
+                                    <div id="carrito">
+
+                                        <table id="lista-carrito" class="u-full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+
+                                        <a href="#" id="vaciarCarrito" class="button u-full-width">Vaciar Carrito</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                        <button type="button" class="btn btn-primary"><a href="Checkout.html" id ="btnCheckout"target="_blank">Ir a Reservar</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+    <main>
+        <section>
+            <div id="aboutUs">
+                <div class="about">
+                    <div class="nosotrasText">
+                        <h2>Sobre Nosotras</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis, nostrum fuga tenetur minima
+                            id totam soluta hic. Est quas quod voluptatibus. Praesentium accusantium obcaecati ullam id
+                            maxime iusto? Reiciendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                            quae, assumenda veritatis illum ad, sed distinctio nam quaerat magni soluta est alias
+                            consequatur cupiditate, ipsum dolore consectetur. Blanditiis, dicta deserunt!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis, nostrum fuga tenetur minima
+                            id totam soluta hic. Est quas quod voluptatibus. Praesentium accusantium obcaecati ullam id
+                            maxime iusto? Reiciendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                            quae, assumenda veritatis illum ad, sed distinctio nam quaerat magni soluta est alias
+                            consequatur cupiditate, ipsum dolore consectetur. Blanditiis, dicta deserunt!</p>
+                    </div>
+                    <div class="nosotrasImg">
+                        <img src="img/studio.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+
+        </section>
+        <section>
+            <div id="#servicios">
+                <h2 id="nuestros">Nuestros Servicios</h2>
+            </div>
+
+            <!-- las cards las traigo de JS -->
+            <div class="container">
+                <div class="row row-cols-md-2 row-cols-lg-3 contenedorCards">
+
+
+                </div>
+            </div>
+
+        </section>
+        <section id="tipoOjos">
+        <div class="container">
+            <div class="eyesGuide row" id="eyesGuide">
+                <h2 style="text-align: center;">Selecciona tu tipo de ojo, y descubre el diseño de pestañas ideal para ti</h2>
+               
+                <div class=" col row row-cols-4 row-cols-sm-2 row-cols-md-2" id="eyes">
+                    <img id="eye1" src="img/almond.jpg" alt="">
+                    <img id="eye2" src="img/caidos.jpg" alt="">
+                    <img id="eye3" src="img/rasgados.jpg" alt="">
+                    <img id="eye4" src="img/rounded.jpg" alt="">
+                </div>
+                <div class = " col col-sm-12 col-md-6" id="result">
+                    <p> </p>
+                   
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>carrito de compras</h2>
+            <div class="contenedorCarrito">
+
+
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

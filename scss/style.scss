@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+
+}
+
+
+
+//EStilo del icono de carrito
+
+.submenu #carrito {
+    display: none;
+}
+
+.submenu #carrito {
+    display: block;
+    // position: absolute;
+    // right: 0;
+
+    top: 100%;
+    z-index: 1;
+    background-color: white;
+    // padding: 20px;
+    // min-height: 400px;
+    
+}
+
+.vacio {
+    padding: 10px;
+    background-color: crimson;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+#navCarrito {
+    ul {
+        list-style: none;
+    }
+}
+
+.borrar-elemento {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+#btnCheckout{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+//saludo
+.seccionPortada {
+    p {
+        font-size: 2.5rem;
+    }
+
+}
+#carritoBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+
+}
+
+
+// Seccion Home
+header {
+    background-image: url("../img/leafy.jpg");
+    background-attachment: fixed;
+    margin-top: 5rem;
+    height: 90vh;
+
+}
+#mainTittle{
+    padding: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+
+}
+#mainSubtittle{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+
+
+}
+
+//Seccion Nosotras
+#aboutUs{
+
+    background-image: url("../img/ilustracion-abstracta.jpg");
+    background-attachment: fixed;
+
+}
+
+.about{
+    padding: 4rem;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    .nosotrasText{
+        padding: 3rem;
+        text-align: center;
+    }
+}
+
+@media(max-width: 768px){
+    .about{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+}
+
+//Seccion Servicios
+#nuestros{
+
+        padding: 4rem;
+        text-align: center;
+        }
+
+#cardService{
+    display: flex;
+    
+    img{
+        padding-top: 2rem;
+        width: 50%;
+        margin: auto;
+    }
+}
+
+#p1, #p2, #p3, #tittleC {
+ 
+    text-align: center;
+}
+#addCarr{
+    display: block;
+    margin: auto;
+    width: 50%;
+    background-color: indianred;
+}
+
+//Estilo de las imagenes de pestañas
+
+#tipoOjos{
+    padding: 5rem;
+    align-content: center;
+        #eyes{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+        }
+    }
+
+#result {
+  
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    img {
+
+    width: 80%;
+    height: fit-content;
+    }
+    h3 {
+        text-align: center;
+    }
+}
+
+#eyes {
+    padding-top: 4rem;
+img {
+    padding: 5px;
+    width: 40%;
+    object-fit: contain;
+}
+}
+
+
+//------- Seccion checkout-----------
+
+.payement{
+    width: 50vw;
+    text-align: center;
+}
