@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="navBarTransp">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" alt="" width="100" height="50">
@@ -21,12 +21,13 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Nosotrxs</a>
-                    <a class="nav-link" href="#">Servicios</a>
-                    <a class="nav-link" href="#">Contacto</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup linksNav">
+                <div class="navbar-nav" id="links">
+                    <a class="nav-link" id="link1" href="#">Home</a>
+                    <a class="nav-link" id="link2" href="#servicios">Servicios</a>
+                    <a class="nav-link" id="link3" href="#tipoOjos">Tu efecto ideal</a>
+                    <a class="nav-link" id="link4" href="#testimonials">Nuestros clientes</a>
+                    <a class="nav-link" id="link5" href="#footer">Contacto</a>
                 </div>
 
             </div>
@@ -42,7 +43,7 @@
                 <input type="submit" value="Insertar Nombre" id="btn-submit">
             </form>
         </div>
-        <div class="seccionPortada">
+        <div class="seccionPortada" id="home">
             <h1 style="padding-top: 10rem;" id="mainTittle">Bienvenidos a Bodhi Studio</h1>
             <h2 id="mainSubtittle">Ven y explota la mejor versión de ti
             </h2>
@@ -88,16 +89,19 @@
                                         </div>
 
                                         <a href="#" id="vaciarCarrito" class="button u-full-width">Vaciar Carrito</a>
-                                        
+
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
                     </div>
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar y seguir viendo</button>
-                        <button type="button" class="btn btn-primary" "><a href="Checkout.html" id ="btnCheckout" target="_blank">Esta ok, ir a Reservar</a></button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar y seguir
+                            viendo</button>
+                        <button type="button" class="btn btn-primary" "><a href="Checkout.html" id="btnCheckout"
+                            target="_blank">Esta ok, ir a Reservar</a></button>
                     </div>
                 </div>
             </div>
@@ -109,7 +113,7 @@
         <section>
             <div id="aboutUs">
                 <div class="about">
-                    <div class="nosotrasText">
+                    <div class="nosotrasText" id="nosotrasText">
                         <h2>Sobre Nosotras</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis, nostrum fuga tenetur minima
                             id totam soluta hic. Est quas quod voluptatibus. Praesentium accusantium obcaecati ullam id
@@ -133,7 +137,7 @@
 
         </section>
         <section>
-            <div id="#servicios">
+            <div id="servicios">
                 <h2 id="nuestros">Nuestros Servicios</h2>
             </div>
 
@@ -146,46 +150,71 @@
 
         </section>
         <section id="tipoOjos">
-        <div class="container">
-            <div class="eyesGuide row" id="eyesGuide">
-                <h2 style="text-align: center;">Selecciona tu tipo de ojo, y descubre el diseño de pestañas ideal para ti</h2>
-               
-                <div class=" col row row-cols-4 row-cols-sm-2 row-cols-md-2" id="eyes">
-                    <img id="eye1" src="img/almond.jpg" alt="">
-                    <img id="eye2" src="img/caidos.jpg" alt="">
-                    <img id="eye3" src="img/rasgados.jpg" alt="">
-                    <img id="eye4" src="img/rounded.jpg" alt="">
+            <div class="container">
+                <div class="eyesGuide row" id="eyesGuide">
+                    <div style="text-align: center;" >
+                        <h2>Selecciona tu tipo de ojo, y descubre el diseño de pestañas
+                            ideal
+                            para ti
+                        </h2>
+                        <h3>
+                            Haz click en la imagen de la izquierda que mas se parezca a tus ojos, asi sabrás el tipo efecto de pestañas que podemos usar en ellos
+                        </h3>
+                    </div>
+
+                    <div class=" col row row-cols-4 row-cols-sm-2 row-cols-md-2" id="eyes">
+                        <img id="eye1" src="img/almond.jpg" alt="">
+                        <img id="eye2" src="img/caidos.jpg" alt="">
+                        <img id="eye3" src="img/rasgados.jpg" alt="">
+                        <img id="eye4" src="img/rounded.jpg" alt="">
+                    </div>
+                    <div class=" col col-sm-12 col-md-6" id="result">
+                        <p> </p>
+
+                    </div>
                 </div>
-                <div class = " col col-sm-12 col-md-6" id="result">
-                    <p> </p>
-                   
-                </div>
-            </div>
             </div>
         </section>
 
-        <section>
+        <section class="testimonials">
             <h2>Testimonios de nuestros clientes</h2>
-            <div id= "testimonials">
-             
+            <h3>Tenemos muchos testimonios que certifican total satisfacion en nuestros servicios</h3>
+            <div id="testimonials">
+                <!-- Generado dinamicamente desde JS con una API de reseñas ficticias -->
+
             </div>
+            <p style="padding-top: 3rem;">Y cada día se suman más personas satisfechas!</p>
             <button onclick="azar()">Ver otro testimonio</button>
 
         </section>
 
-        
+
     </main>
     <footer>
-        <div>
+        <div class="seccionFoot" id="footer">
+
             <img src="img/logo.png" alt="">
-            <a href="#">Inicio</a> 
-            <a href="Nosotras">Nosotras</a>
-            <a href="#nuestros">Servicios</a>
-            <a href="#">Contacto</a>
+
+            <div>
+                <a href="#home">Inicio</a>
+                <a href="#nosotrasText">Nosotras</a>
+                <a href="#nuestros">Servicios</a>
+                <a href="#">Contacto</a>
+            </div>
+            <div class="redes">
+                <p>© 2021 Copyright:
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="img/facebook.svg" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="img/instagam.svg" alt="">
+                    </a>
 
 
+                </p>
+            </div>
         </div>
-      
+
     </footer>
 
 

@@ -26,7 +26,7 @@ body {
     background-color: white;
     // padding: 20px;
     // min-height: 400px;
-    
+
 }
 
 .vacio {
@@ -43,6 +43,30 @@ body {
     }
 }
 
+#navBarTransp {
+    background-color: rgba($color: #F5F5DC, $alpha: 0.4) !important;
+}
+
+#link1,
+#link2,
+#link3,
+#link4,
+#link5 {
+    color: teal;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+
+    &:hover {
+        color: indianred;
+        text-decoration: underline;
+        text-decoration-color: teal;
+
+    }
+
+}
+
+
 .borrar-elemento {
     background-color: red;
     border-radius: 50%;
@@ -51,10 +75,12 @@ body {
     color: white;
     font-weight: bold;
 }
-#btnCheckout{
+
+#btnCheckout {
     text-decoration: none;
     color: blanchedalmond;
 }
+
 //saludo
 .seccionPortada {
     p {
@@ -62,7 +88,8 @@ body {
     }
 
 }
-#carritoBtn{
+
+#carritoBtn {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -72,21 +99,37 @@ body {
 
 
 // Seccion Home
+
+
 header {
     background-image: url("../img/leafy.jpg");
     background-attachment: fixed;
-    margin-top: 5rem;
-    height: 90vh;
+    padding-top: 7rem;
+
+    background-size: cover;
+
+    @media(min-width: 768px) {
+        padding-top: 6rem;
+        height: 90vh;
+
+    }
+
 
 }
-#mainTittle{
-    padding: 10rem;
+
+#mainTittle {
+    @media(min-width: 768px) {
+        padding: 10rem;
+    }
+
+    padding: 5rem;
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
 
 }
-#mainSubtittle{
+
+#mainSubtittle {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
@@ -95,29 +138,42 @@ header {
 }
 
 //Seccion Nosotras
-#aboutUs{
+#aboutUs {
 
     background-image: url("../img/ilustracion-abstracta.jpg");
     background-attachment: fixed;
 
 }
 
-.about{
+.about {
     padding: 4rem;
     display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-    .nosotrasText{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .nosotrasText {
         padding: 3rem;
         text-align: center;
     }
+
+    .nosotrasImg {
+        margin: auto;
+
+        img {
+            @media(max-width: 768px) {
+                width: 80%;
+            }
+
+        }
+    }
 }
 
-@media(max-width: 768px){
-    .about{
+
+@media(max-width: 768px) {
+    .about {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -128,27 +184,31 @@ header {
 }
 
 //Seccion Servicios
-#nuestros{
+#nuestros {
 
-        padding: 4rem;
-        text-align: center;
-        }
+    padding: 4rem;
+    text-align: center;
+}
 
-#cardService{
+#cardService {
     display: flex;
-    
-    img{
+
+    img {
         padding-top: 2rem;
         width: 50%;
         margin: auto;
     }
 }
 
-#p1, #p2, #p3, #tittleC {
- 
+#p1,
+#p2,
+#p3,
+#tittleC {
+
     text-align: center;
 }
-#addCarr{
+
+#addCarr {
     display: block;
     margin: auto;
     width: 50%;
@@ -156,53 +216,130 @@ header {
 }
 
 //Estilo de las imagenes de pestañas
+#eyesGuide {
+    h2 {
+        font-size: 1.5rem;
 
-#tipoOjos{
-    padding: 5rem;
-    align-content: center;
-        #eyes{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-
-        }
     }
 
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+#tipoOjos {
+    padding: 2rem;
+    align-content: center;
+
+    #eyes {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+}
+
 #result {
-  
+
     display: flex;
     flex-direction: column;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
     align-content: center;
 
     img {
 
-    width: 80%;
-    height: fit-content;
+        width: 80%;
+        height: fit-content;
     }
+
     h3 {
         text-align: center;
     }
 }
 
 #eyes {
-    padding-top: 4rem;
-img {
-    padding: 5px;
-    width: 40%;
-    object-fit: contain;
-}
+    padding-top: 2rem;
+
+    img {
+        padding: 5px;
+        width: 40%;
+        object-fit: contain;
+    }
 }
 
+
+//testimonios
+
+.testimonials {
+    background-image: url("../img/leafy.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 4rem;
+    text-align: center;
+
+    h2 {
+        color: teal;
+    }
+
+}
+
+footer {
+    padding: 4rem;
+    background-image: url("../img/ilustracion-abstracta.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+
+    .seccionFoot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+
+
+        img {
+            width: 10%;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: indianred;
+            font-weight: bold;
+        }
+
+        ;
+
+        .redes {
+            display: flex;
+            flex-direction: row;
+
+            img {
+                width: 40%;
+                padding: 0.25rem;
+            }
+        }
+    }
+}
 
 //------- Seccion checkout-----------
 
-.payement{
+.payement {
     width: 50vw;
     text-align: center;
+}
+
+.checkoutZone {
+    background-image: url("../img/leafy.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 4rem;
+    text-align: center;
+    font-weight: bold;
+
 }

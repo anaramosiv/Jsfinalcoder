@@ -30,6 +30,29 @@ body {
   list-style: none;
 }
 
+#navBarTransp {
+  background-color: rgba(245, 245, 220, 0.4) !important;
+}
+
+#link1,
+#link2,
+#link3,
+#link4,
+#link5 {
+  color: teal;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#link1:hover,
+#link2:hover,
+#link3:hover,
+#link4:hover,
+#link5:hover {
+  color: indianred;
+  text-decoration: underline;
+  text-decoration-color: teal;
+}
+
 .borrar-elemento {
   background-color: red;
   border-radius: 50%;
@@ -58,15 +81,26 @@ body {
 header {
   background-image: url("../img/leafy.jpg");
   background-attachment: fixed;
-  margin-top: 5rem;
-  height: 90vh;
+  padding-top: 7rem;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  header {
+    padding-top: 6rem;
+    height: 90vh;
+  }
 }
 
 #mainTittle {
-  padding: 10rem;
+  padding: 5rem;
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  #mainTittle {
+    padding: 10rem;
+  }
 }
 
 #mainSubtittle {
@@ -93,6 +127,14 @@ header {
   padding: 3rem;
   text-align: center;
 }
+.about .nosotrasImg {
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .about .nosotrasImg img {
+    width: 80%;
+  }
+}
 
 @media (max-width: 768px) {
   .about {
@@ -118,7 +160,10 @@ header {
   margin: auto;
 }
 
-#p1, #p2, #p3, #tittleC {
+#p1,
+#p2,
+#p3,
+#tittleC {
   text-align: center;
 }
 
@@ -129,8 +174,15 @@ header {
   background-color: indianred;
 }
 
+#eyesGuide h2 {
+  font-size: 1.5rem;
+}
+#eyesGuide h3 {
+  font-size: 1.25rem;
+}
+
 #tipoOjos {
-  padding: 5rem;
+  padding: 2rem;
   align-content: center;
 }
 #tipoOjos #eyes {
@@ -159,7 +211,7 @@ header {
 }
 
 #eyes {
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 #eyes img {
   padding: 5px;
@@ -167,9 +219,59 @@ header {
   object-fit: contain;
 }
 
+.testimonials {
+  background-image: url("../img/leafy.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 4rem;
+  text-align: center;
+}
+.testimonials h2 {
+  color: teal;
+}
+
+footer {
+  padding: 4rem;
+  background-image: url("../img/ilustracion-abstracta.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+footer .seccionFoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+footer .seccionFoot img {
+  width: 10%;
+}
+footer .seccionFoot a {
+  display: block;
+  text-decoration: none;
+  color: indianred;
+  font-weight: bold;
+}
+footer .seccionFoot .redes {
+  display: flex;
+  flex-direction: row;
+}
+footer .seccionFoot .redes img {
+  width: 40%;
+  padding: 0.25rem;
+}
+
 .payement {
   width: 50vw;
   text-align: center;
+}
+
+.checkoutZone {
+  background-image: url("../img/leafy.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 4rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

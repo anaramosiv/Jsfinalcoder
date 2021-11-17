@@ -1,4 +1,4 @@
-// window.onload = function() {
+//-------Todo está declarado en funcion a la ejecución------
 
 //Array para carrito
 
@@ -105,7 +105,6 @@ for (let i = 0; i < servicios.length; i++) {
     const imagenCard = document.createElement('img');
     imagenCard.src = `${servicios[i].url}`;
     imagenCard.classList.add('img-fluid');
-
 
     //Ahora creamos la card, contenedora de todo
     const cardCompleta = document.createElement('div');
@@ -218,9 +217,7 @@ function carritoHTML() {
             carritoHTML();
 
 
-        });
-
-        
+        });   
 
         //Vaciar el Array y el HTML del carrito
         vaciarCarritoBoton.addEventListener('click', (e) => {
@@ -235,12 +232,6 @@ function carritoHTML() {
 }
 
 
-// function miCarritoStorage() {
-//     localStorage.setItem('carrito', JSON.stringify(miCarrito))};
-
-
-
-
 //Elimina los arrays anteriores del tbody para que no se repitan cuando agregamos nuevos productos
 function limpiarHTML() {
     // contenedorCarrito.innerHTML = '';
@@ -249,8 +240,6 @@ function limpiarHTML() {
     }
 
 }
-
-
 // ---------Seccion de nombre en home-----------
 
 //Pedir nombre para saludar a la persona que visita la pagina (Jquuery)//
@@ -258,14 +247,9 @@ let tomarNombre = ""
 $("#formulario").submit(function (e) {
     //Prevenimos el comportamiento de submit 
     e.preventDefault();
-
     let input = $('input');
-
     tomarNombre = $(input).val();
-
     $(".seccionPortada").prepend(`<p class"Saludo">Hola ${tomarNombre} es un gusto atenderte</p>`);
-
-
 });
 
 //   Evento para desaparecer el formulario
@@ -305,7 +289,6 @@ const imgs = [{
 imgListener();
 
 function imgListener() {
-
     imagenes.addEventListener('click', mostrarLash); {
 
     }
@@ -317,13 +300,12 @@ function mostrarLash(e) {
     contenedorResult.innerHTML = `<img src="${imgSeleccionada.url}" alt="">`;
     contenedorResult.innerHTML += `<h3>El estilo que mejor te iría es:<br> ${imgSeleccionada.nombre}</h3>`;
 };
-// };
+
 
 //APi  para mostrar comentarios de usuarios ficticios
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
 
 async function consultarAPI(numero) {
     //consulta a la API jsonplaceholder
